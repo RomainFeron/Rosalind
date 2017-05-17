@@ -2,7 +2,7 @@ import os
 import sys
 
 # Problem name
-problem = 'gene_orders'
+problem = 'protein_mass'
 
 # Directories initialisation
 root_dir = '/home/rferon/perso/rosalind/'
