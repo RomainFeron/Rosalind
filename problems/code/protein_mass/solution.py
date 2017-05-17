@@ -13,4 +13,4 @@ def run(data_dir, output_dir):
     sequence = ''.join(line.rstrip('\n') for line in input_file.readline())
 
     weight = round(sum((prot_mass_table[aa] for aa in sequence)), 3)
-    print(weight)
+    output_file.write(weight)
