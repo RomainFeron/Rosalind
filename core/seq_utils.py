@@ -14,10 +14,15 @@ def open_fasta(input_file):
 def open_fasta_multiple(input_file):
 
     output = {}
-    temp = ''
+    header = ''
+    seq = ''
     for line in input_file:
         if line.startswith('>'):
-            temp = line[1:-1]
+            if header != '':
+                output[header] = seq
+                seq = ''
+            header = line[1:-1]
         else:
-            output[temp] = line[:-1]
+            seq += line[:-1]
+    output[header] = seq
     return output
